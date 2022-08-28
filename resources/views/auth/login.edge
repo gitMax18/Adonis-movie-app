@@ -1,0 +1,24 @@
+@layout('layouts/main')
+@set('title', 'connexion')
+
+@section('body')
+    <main>
+        <h1>Connexion</h1>
+
+        <form action="/login" method="POST">
+       
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            @if(message)
+            <p class="form-error"> {{ message}} </p>
+            @end
+            <button class="btn btn-submit">Valider</button>
+        </form>
+    </main>
+@end

@@ -1,0 +1,29 @@
+<header>
+    <div class="wrapper">
+        <div class="header-container">
+            <div>
+                    <a class="header-logo" href="{{route('home')}}">Movie App</a>   
+            </div>
+            <nav>
+                <ul class="header-items">
+                    @if(auth.isLoggedIn)
+                    <li class="header-item">
+                        <a class="btn btn-primary" href="{{route('auth_logout')}}">Deconnexion</a>
+                    </li>
+                    <li class="header-item">
+                        {{ auth.user.pseudo }}
+                    </li>
+                    @else
+                    <li class="header-item">
+                        <a class="btn btn-primary" href="{{route('auth_login')}}">Connexion</a>
+                    </li>
+                    <li class="header-item">
+                        <a class="btn btn-primary" href="{{route('auth_register')}}">Enregistrement</a>
+                    </li>
+                    @endif
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+

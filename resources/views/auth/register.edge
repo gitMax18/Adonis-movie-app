@@ -1,0 +1,40 @@
+@layout('layouts/main')
+@set('title', 'enregistrement')
+
+@section('body')
+    <main>
+        <h1>S'enregister</h1>
+
+        <form action="/register" method="POST" enctype="multipart/form-data">
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+                @if(flashMessages.has('errors.email'))
+                <p> {{ flashMessages.get('errors.email') }} </p>
+                @end
+            </div>
+            <div class="input-container">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+                @if(flashMessages.has('errors.password'))
+                <p> {{ flashMessages.get('errors.password') }} </p>
+                @end
+            </div>
+            <div class="input-container">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" id="pseudo" name="pseudo" required>
+                @if(flashMessages.has('errors.pseudo'))
+                <p> {{ flashMessages.get('errors.pseudo') }} </p>
+                @end
+            </div>
+            <div class="input-container">
+                <label for="avatar">Avatar</label>
+                <input type="file" id="avatar" name="avatar">
+                @if(flashMessages.has('errors.avatar'))
+                <p> {{ flashMessages.get('errors.avatar') }} </p>
+                @end
+            </div>
+            <button class="btn btn-submit">Valider</button>
+        </form>
+    </main>
+@end

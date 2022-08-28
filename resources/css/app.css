@@ -1,0 +1,111 @@
+html {
+  font-size: 62.5%;
+  --color-primary: black;
+  --color-secondary: orange;
+  --color-success: green;
+  --color-danger: red;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+/* #######################-- layout --####################### */
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex-grow: 1;
+}
+
+/* #######################-- btn --####################### */
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3rem;
+  border: none;
+}
+
+.btn-primary {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+.btn-submit {
+  background-color: var(--color-success);
+  color: white;
+}
+
+/* #######################-- header --####################### */
+
+header {
+  background-color: var(--color-primary);
+  border-bottom: 2px solid var(--color-secondary);
+  padding: 2rem 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-item {
+  margin-left: 0.5rem;
+  color: white;
+}
+
+/* #######################-- footer --####################### */
+
+footer {
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 2rem 0;
+  border-top: 2px solid var(--color-secondary);
+}
+
+/* #######################-- form --####################### */
+
+.form-error {
+  color: var(--color-danger);
+  padding: 0.5rem 0;
+}
