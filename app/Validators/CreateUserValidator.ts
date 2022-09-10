@@ -30,7 +30,7 @@ export default class CreateUserValidator {
     ]),
     password: schema.string(),
     pseudo: schema.string(),
-    avatar: schema.file.nullable({ extnames: ["jpg", "png"] }),
+    avatar: schema.file.nullableAndOptional({ extnames: ["jpg", "png"] }),
   });
 
   /**

@@ -9,7 +9,7 @@
 |
 */
 
-import Server from '@ioc:Adonis/Core/Server'
+import Server from "@ioc:Adonis/Core/Server";
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +21,9 @@ import Server from '@ioc:Adonis/Core/Server'
 |
 */
 Server.middleware.register([
-  () => import('@ioc:Adonis/Core/BodyParser'),
-])
+  () => import("@ioc:Adonis/Core/BodyParser"),
+  () => import("App/Middleware/SilentAuth"),
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -33,12 +34,13 @@ Server.middleware.register([
 | or middleware function and key is the alias. Later you can use these
 | alias on individual routes. For example:
 |
-| { auth: () => import('App/Middleware/Auth') }
 |
 | and then use it as follows
 |
 | Route.get('dashboard', 'UserController.dashboard').middleware('auth')
 |
 */
+
 Server.middleware.registerNamed({
-})
+  auth: () => import("App/Middleware/Auth"),
+});

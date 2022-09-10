@@ -1,0 +1,38 @@
+@layout('layouts/main')
+@set('title', 'creer un film')
+
+@section('body')
+<main>
+    <h1 class="page-title">Ajouter un film</h1>
+    <div class="create-form">
+        <form action="{{route('movie_createValidation')}}" method="POST" enctype="multipart/form-data">
+            <div class="input-container">
+                <label for="title">Titre : </label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="input-container">
+                <label for="director">Réalisateur : </label>
+                <input type="text" id="director" name="director">
+            </div>
+            <div class="input-container">
+                <label for="year">Année : </label>
+                <input type="number" id="year" name="year">
+            </div>
+            <div class="input-container">
+                <label for="image">Image : </label>
+                <input type="file" id="image" name="image">
+            </div>
+            <div class="input-container">
+                <label for="short_description">Petite description : </label>
+                <input type="text" id="short_description" name="short_description" required>
+            </div>
+            <div class="input-container">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
+            </div>
+            <button class="btn btn-submit">Valider</button>
+        </form>
+    </div>
+
+</main>
+@end

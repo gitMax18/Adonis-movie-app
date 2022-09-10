@@ -2,11 +2,11 @@
 @set('title', 'connexion')
 
 @section('body')
-    <main>
-        <h1>Connexion</h1>
+<main>
+    <div class="login-form">
+        <h1 class="form-title">Connexion</h1>
 
         <form action="/login" method="POST">
-       
             <div class="input-container">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" required>
@@ -20,5 +20,6 @@
             @end
             <button class="btn btn-submit">Valider</button>
         </form>
-    </main>
+    </div>
+</main>
 @end

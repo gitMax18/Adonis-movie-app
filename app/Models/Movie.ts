@@ -1,40 +1,34 @@
 import { DateTime } from "luxon";
-import {
-  BaseModel,
-  column,
-  hasOne,
-  HasOne,
-  beforeSave,
-} from "@ioc:Adonis/Lucid/Orm";
-import User from "./User";
+import { BaseModel, column, beforeSave } from "@ioc:Adonis/Lucid/Orm";
 
 export default class Movie extends BaseModel {
   @column({ isPrimary: true })
   public id: number;
 
   @column()
-  public title: String;
+  public title: string;
 
   @column()
-  public description: String;
+  public description: string;
 
   @column()
-  public short_description: String;
+  public short_description: string;
 
   @column()
-  public director: String;
+  public director: string;
 
   @column()
-  public year: Number;
+  public year: number;
 
   @column()
-  public image: String;
+  public image: string;
 
   @column()
-  public slug: String;
+  public slug: string;
 
-  @hasOne(() => User)
-  public user: HasOne<typeof User>;
+  // @hasOne(() => User)
+  @column()
+  public user: number;
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;
@@ -44,7 +38,7 @@ export default class Movie extends BaseModel {
 
   @beforeSave()
   public static createSlug(Movie: Movie) {
-    Movie.slug =
-      Movie.slug.trim().toLowerCase().replace(" ", "-") + "-" + Movie.id;
+    // Movie.slug = Movie.slug.toLowerCase().replace(" ", "-") + "-" + Movie.id;
+    Movie.slug = Movie.slug;
   }
 }

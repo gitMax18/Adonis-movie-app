@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="header-container">
             <div>
-                    <a class="header-logo" href="{{route('home')}}">Movie App</a>   
+                <a class="header-logo" href="{{route('home')}}">Movie App</a>
             </div>
             <nav>
                 <ul class="header-items">
@@ -11,7 +11,12 @@
                         <a class="btn btn-primary" href="{{route('auth_logout')}}">Deconnexion</a>
                     </li>
                     <li class="header-item">
-                        {{ auth.user.pseudo }}
+                        <a class="btn btn-primary" href="{{route('movie_create')}}">Ajouter un film</a>
+                    </li>
+                    <li class="header-item">
+                        <a href="{{route('movie_list', {'id' : auth.user.id})}}" class="header-user">
+                            <img class="header-avatar" src="{{auth.user.avatar}}" alt="avatar">
+                        </a>
                     </li>
                     @else
                     <li class="header-item">
@@ -21,9 +26,11 @@
                         <a class="btn btn-primary" href="{{route('auth_register')}}">Enregistrement</a>
                     </li>
                     @endif
+                    <li class="header-item">
+                        <a class="btn btn-primary" href="{{route('health_check')}}">Santé</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </div>
 </header>
-

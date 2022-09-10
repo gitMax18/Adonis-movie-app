@@ -2,8 +2,9 @@
 @set('title', 'enregistrement')
 
 @section('body')
-    <main>
-        <h1>S'enregister</h1>
+<main>
+    <div class="register-form">
+        <h1 class="form-title">S'enregister</h1>
 
         <form action="/register" method="POST" enctype="multipart/form-data">
             <div class="input-container">
@@ -36,5 +37,8 @@
             </div>
             <button class="btn btn-submit">Valider</button>
         </form>
-    </main>
+
+    </div>
+
+</main>
 @end

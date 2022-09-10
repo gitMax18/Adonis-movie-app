@@ -1,0 +1,35 @@
+@layout('layouts/main')
+@set('title', 'detail d\'un film')
+
+@section('body')
+    <main>
+        <div class="details-container">
+            <div class="details-image-container">
+                <img class="details-image" src="{{movie.image}}" alt="image du film">
+            </div>
+            <div class="details-content">
+                <div class="detail-item detail-title">
+                    <span class="detail-tag">Titre : </span> 
+                    <h1>{{movie.title}}</h1>
+                </div>
+                <div class="detail-item detail-director">
+                    <span class="detail-tag">Réalisateur : </span> 
+                    <div>{{movie.director}}</div>
+                </div>
+                <div class="detail-item detail-year">
+                    <span class="detail-tag">Année : </span> 
+                    <div>{{movie.year}}</div>
+                </div>
+                <div class="detail-item detail-shortDescription">
+                    <span class="detail-tag">Petite description : </span>
+                    <p>{{movie.short_description}}</p>
+                </div>
+                
+                <div class="detail-item detail-description">
+                    <span class="detail-tag">Description : </span>
+                    <p>{{movie.description}}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+@end

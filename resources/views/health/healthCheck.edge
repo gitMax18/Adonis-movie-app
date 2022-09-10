@@ -1,0 +1,22 @@
+@layout('layouts/main')
+@set('title', 'Etat de santé')
+
+@section('body')
+<main>
+    <h1 class="page-title">Santé de l'application</h1> 
+    <div class="global-health-container">
+        @if(report.healthy)
+          <div class="health-good">L'application marche correctement</div>
+        @else
+        <div class="health-bad">L'application ne marche pas corretement</div>
+        @endif
+    </div>
+    <h2 class="report-title">Report :</h2>
+    <div>
+        {{report.report.env.displayName}}
+    </div>
+    <div>
+        {{report.report.appKey.displayName}}
+    </div>
+</main>
+@end
